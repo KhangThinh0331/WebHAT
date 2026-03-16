@@ -14,16 +14,16 @@ export default function Header() {
         `relative pb-1 transition
      after:absolute after:left-0 after:bottom-0 after:h-[2px]
      after:bg-red-600 after:transition-all after:duration-300
-     ${pathname === path
+     ${(pathname ?? "") === path
             ? "after:w-full text-red-600"
             : "after:w-0 hover:after:w-full"
         }`;
 
-    const serviceActive = pathname.startsWith("/dich-vu");
+    const serviceActive = pathname?.startsWith("/dich-vu");
 
     const dropdownItem = (path: string) =>
         `block px-5 py-3 transition
-     ${pathname === path
+     ${(pathname ?? "") === path
             ? "bg-red-50 text-red-600 font-semibold"
             : "hover:bg-gray-100"
         }`;
